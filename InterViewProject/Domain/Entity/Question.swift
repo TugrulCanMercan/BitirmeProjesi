@@ -7,18 +7,15 @@
 
 import Foundation
 
-struct Question:Hashable{
-    
-    
-    var selectedPickere:String
+struct TTQuestion:Hashable {
+    var category:[String]
+    var selectedPicker:String
     var questionContent:String
-    var questionOptions:[String:String]
+    var quesitons:[String:String]
     var questionAnswer:String
-    
-    
 }
 
-extension Question{
+extension TTQuestion{
     func options(){
         
     }

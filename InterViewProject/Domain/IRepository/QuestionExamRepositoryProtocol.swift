@@ -10,11 +10,11 @@ import Foundation
 
 protocol QuestionExamRepositoryProtocol{
     
-    func addQuestion(question:Question,completionHandler: @escaping (Result<Question,Error>) -> Void)
+    func addQuestion(question:TTQuestion,completionHandler: @escaping (Result<TTQuestion,Error>) -> Void)
         
-    func addExam(question:Question,completionHandler: @escaping (Result<Question,Error>) -> Void)
+    func addExam(question:TTQuestion,completionHandler: @escaping (Result<TTQuestion,Error>) -> Void)
     
-    func getCategoryList(categoryList:[String],completionHandler: @escaping (Result<Question,Error>) -> Void)
+    func getCategoryList(categoryList:[String],completionHandler: @escaping (Result<TTQuestion,Error>) -> Void)
     
     
 }

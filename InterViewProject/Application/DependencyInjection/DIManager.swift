@@ -8,6 +8,7 @@
 import Foundation
 import Swinject
 import Infrastructure
+import CoreData
 
 final class DIManager{
     
@@ -54,6 +55,34 @@ final class DIManager{
             return SignUpUseCase(authRepo: resolver.resolve(AuthRepositoryProtocol.self, name:"IAuthRepo")!)
             
         }
+//        
+//        container.register(NSPersistentContainer.self,name: "NSPersistentContainer") { resolver in
+//            lazy var persistanceContainer:NSPersistentContainer = {
+//                let container =  NSPersistentContainer(name: "ExamDraftContainer")
+//                persistanceContainer.loadPersistentStores { description, err in
+//                    print(err)
+//                }
+//                return container
+//            }()
+//            return persistanceContainer
+//            
+//            
+//           
+//        }
+//        container.register(IExamDraftListRepository.self) { resolver in
+//            let provider = CoreDataContextProvider { err in
+//                print(err)
+//            }
+//
+//            return ExamDraftListRepository(context: provider.viewContext)
+//        }
+//
+//        container.register(ExamRepository.self) { resolver in
+//            let provider = CoreDataContextProvider { err in
+//                print(err)
+//            }
+//            return ExamRepository(context: provider.viewContext)
+//        }
     }
     
     

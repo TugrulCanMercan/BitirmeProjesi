@@ -10,13 +10,7 @@ import Combine
 import SwiftUI
 
 
-struct TTQuestion {
-    var category:[String]
-    var selectedPicker:String
-    var questionContent:String
-    var quesitons:[String:String]
-    var questionAnswer:String
-}
+
 
 class AddQuestionViewModel:ObservableObject,Identifiable,Equatable{
     static func == (lhs: AddQuestionViewModel, rhs: AddQuestionViewModel) -> Bool {
