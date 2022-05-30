@@ -64,7 +64,15 @@ protocol ExamDraftProtocol:RepositoryProtocol {
 }
 
 
-class ExamDraftRepo:ExamDraftProtocol{
+class ExamDraftRepo: CDExamRepositoryProtocol,ExamDraftProtocol{
+    
+    
+   
+    
+    
+    
+    
+    
     var context: NSManagedObjectContext
     
     typealias Entity = ExamEntity
@@ -74,7 +82,38 @@ class ExamDraftRepo:ExamDraftProtocol{
     }
     
     
-    func getAllExam(){
-        let resul = getAll()
+    
+    func getExamById(identifier id: UUID) -> ExamEntity? {
+        do {
+            let result = try get(byIdentifier: id)
+            return result
+        } catch let err {
+            print(err)
+            
+            return nil
+        }
     }
+    
+    func updateExam(identifier id: UUID) -> ExamEntity? {
+        return nil
+    }
+    
+    func createExam(Item: ExamEntity) -> String? {
+        return create(item: Item)
+    }
+    
+    
+    func getAllExam() -> [Entity]? {
+        
+        guard let result = getAll() else { return nil }
+        return result
+    }
+   
+    
+    
+   
+    
+    
+ 
+    
 }

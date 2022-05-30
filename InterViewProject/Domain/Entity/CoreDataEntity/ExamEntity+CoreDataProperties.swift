@@ -17,6 +17,7 @@ extension ExamEntity {
     }
 
     @NSManaged public var examName: String?
+    @NSManaged public var id: UUID?
     @NSManaged public var questions: Set<QuestionEntity>?
 
 }
@@ -39,6 +40,22 @@ extension ExamEntity {
 }
 
 extension ExamEntity : Identifiable {
+    
+    func toDomainModel() -> ExamModel {
+        
+        
+        let questionList = questions?.compactMap({ item -> TTQuestion in
+            
+            let ttQuestionModel = TTQuestion(category: item.category ?? [],
+                                             selectedPicker: item.selectedPicker ?? "",
+                                             questionContent: item.questionContent ?? "",
+                                             quesitons: item.quesitons ?? [:],
+                                             questionAnswer: item.questionAnswer ?? "")
+            return ttQuestionModel
+        })
+        let exam = ExamModel(id: id, examName: examName, questions: questionList)
+        return exam
+    }
 
 //    func toDomainModel() -> ExamModel {
 //

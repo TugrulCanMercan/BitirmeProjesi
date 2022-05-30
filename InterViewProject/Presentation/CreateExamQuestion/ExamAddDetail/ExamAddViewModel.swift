@@ -17,9 +17,10 @@ class ExamQuestionViewModel:ObservableObject{
     
     var allQuestion:[TTQuestion] = []
     @Published var entity:[ExamEntity] = []
-    
+    @Published var examList:[ExamModel] = []
 //    var persistant = DIManager.shared.container.resolve(IExamDraftListRepository.self)
-    var repos = ExamDraftRepo(context: CoreDataManager.shared.context)
+    
+    var examManageUsecase = DIManager.shared.container.resolve(CDExamManageUseCase.self,name: "CDExamManageUseCase")
     init(){
         
        
@@ -34,39 +35,78 @@ class ExamQuestionViewModel:ObservableObject{
     }
     
     func addDraftList() {
-        $questionList.map { vmList -> [TTQuestion] in
-            let qList = vmList.map { vm in
-                return vm.ttQuestion
+        
+        $questionList.combineLatest($examName)
+            .map { (vmList,examName) -> [ExamModel] in
+                let questionList = vmList.map { vm -> ExamModel in
+                    let qList = vmList.compactMap({ $0.ttQuestion })
+                    let model = ExamModel(id: UUID(), examName: examName, questions: qList)
+                    return model
+                }
+                return questionList
+                
+                
             }
-            return qList
-        }
-        .sink { [weak self] list in
-            guard let self = self else { return }
-//            self.persistant?.create(exam: ExamModel(examName: "exam", questions: list))
-            let exam = ExamEntity(context: CoreDataManager.shared.context)
-            let ques = QuestionEntity(context: CoreDataManager.shared.context)
-            var setquest = Set<QuestionEntity>()
-            ques.quesitons = ["salak":"mall"]
-            
-            ques.questionContent = "naberlaa"
-            setquest.insert(ques)
-            
-            exam.examName = "salakkk"
-            exam.questions = setquest
-            self.repos.create(item: exam)
-            self.allQuestion = list
-        }
-        .store(in: &cancellable)
+            .sink { [weak self] examList in
+                guard let self = self else { return }
+                examList.forEach { exam in
+                    _ = self.examManageUsecase?.createExam(Item: exam)
+                }
+             
+            }
+            .store(in: &cancellable)
+
+
+        
+//        $questionList.map { vmList -> [TTQuestion] in
+//            let qList = vmList.map { vm in
+//
+//
+//                return vm.ttQuestion
+//            }
+//            return qList
+//        }
+//        .sink { [weak self] list in
+//            guard let self = self else { return }
+////            self.persistant?.create(exam: ExamModel(examName: "exam", questions: list))
+//            self.examManageUsecase?.createExam(Item: <#T##ExamModel#>)
+//            self.allQuestion = list
+//        }
+//        .store(in: &cancellable)
     
     }
     
+    func getDene(){
+//        do {
+//            let result = try repos.get(byIdentifier: UUID(uuidString: "BF4EA56C-02F2-4181-BD68-A28AEB8FC9FC")!  )
+//            print(result.examName)
+//            print(result.questions?.first)
+//        } catch let err  {
+//            print(err)
+//        }
+       
+    }
+    
+    func getAllExam() {
+        
+    }
+    
     func getExam() {
-        let res = repos.getAll()
+        let res = examManageUsecase?.getAllExamList()
         res?.forEach({ ent in
-            ent.questions?.map({ res in
-                print(res.questionContent)
-            })
+            print(ent.id)
         })
+        guard let res = res else {
+            return
+        }
+        
+        self.examList = res
+        
+//        let list = res?.map({ entity in
+//            let res = ["":""]
+//            res[""]
+//        })
+        
 //        let exam = self.persistant?.getExam(predicate: nil)
 //
 //        if let exam = exam {

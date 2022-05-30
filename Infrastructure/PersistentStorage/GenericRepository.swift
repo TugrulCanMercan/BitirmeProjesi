@@ -8,26 +8,32 @@
 import Foundation
 import CoreData
 
+enum GenericCoreDataError :String, Error {
+    case itemNotFound = "Entity Bulunamadı"
+}
+
 
 protocol RepositoryProtocol {
     associatedtype Entity:NSManagedObject
-    func create(item: Entity)
+    func create(item: Entity) -> String?
     func getAll() -> [Entity]?
-    var context : NSManagedObjectContext {get set}
-//    func get(byIdentifier id: UUID) -> Entity
+    var context : NSManagedObjectContext { get set }
+    func get(byIdentifier id: UUID) throws -> Entity
 //    func update(item: Entity)
 //    func delete(record: Entity)
 }
 extension RepositoryProtocol{
-    func create(item: Entity) {
+    func create(item: Entity) -> String? {
         
         let className = String(describing: Entity.self)
         var managedObject = NSEntityDescription.insertNewObject(forEntityName: className, into: context) as? Entity
         managedObject = item
         do {
             try managedObject?.managedObjectContext?.save()
+            return "Kayıt Başarılı"
         } catch let err {
             print("hata alındı \(err)")
+            return "hata \(err)"
         }
         
     }
@@ -45,10 +51,22 @@ extension RepositoryProtocol{
         } catch  {
             return nil
         }
-        
-
-        
     }
+    func get(byIdentifier id: UUID) throws ->  Entity {
+        let fetchReq = Entity.fetchRequest()
+        fetchReq.predicate = NSPredicate(format: "%K == %@", "id", id as CVarArg)
+        
+        
+        
+        do {
+           let result = try context.fetch(fetchReq) as? [Entity]
+            return (result?.first)!
+        
+        } catch  {
+            throw GenericCoreDataError.itemNotFound
+        }
+    }
+    
 }
 
 

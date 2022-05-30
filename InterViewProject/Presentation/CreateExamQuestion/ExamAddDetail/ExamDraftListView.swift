@@ -10,11 +10,17 @@ import SwiftUI
 struct ExamDraftListView: View {
     
     @ObservedObject var vm: ExamQuestionViewModel
+    
+    
+   
     var body: some View {
         List{
-            ForEach(vm.entity,id:\.self) { result in
+            ForEach(vm.examList) { result in
                 Text(result.examName ?? "boş")
             }
+        }
+        .onAppear {
+            vm.getExam()
         }
     }
 }

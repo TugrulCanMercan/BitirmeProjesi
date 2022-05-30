@@ -43,6 +43,19 @@ final class DIManager{
             return UserRepository(networkService: resolver.resolve(DataTransferService.self, name: "IDataTransferService")!)
         }
         
+        container.register(CDExamRepositoryProtocol.self, name: "ICDExamRepositoryProtocol") { resolver in
+            
+            lazy var persistanceContainer:NSPersistentContainer = {
+                let container =  NSPersistentContainer(name: "ExamDraftContainer")
+                persistanceContainer.loadPersistentStores { description, err in
+                    print(err)
+                }
+                return container
+            }()
+            
+            return ExamDraftRepo(context: persistanceContainer.viewContext)
+        }
+        
         container.register(LoginUseCase.self, name: "LoginUseCaseDI") { resolver in
             return LoginUseCase(authRepo: resolver.resolve(AuthRepositoryProtocol.self, name: "IAuthRepo")!)
         }
@@ -55,34 +68,39 @@ final class DIManager{
             return SignUpUseCase(authRepo: resolver.resolve(AuthRepositoryProtocol.self, name:"IAuthRepo")!)
             
         }
-//        
-//        container.register(NSPersistentContainer.self,name: "NSPersistentContainer") { resolver in
-//            lazy var persistanceContainer:NSPersistentContainer = {
-//                let container =  NSPersistentContainer(name: "ExamDraftContainer")
-//                persistanceContainer.loadPersistentStores { description, err in
-//                    print(err)
-//                }
-//                return container
-//            }()
-//            return persistanceContainer
-//            
-//            
-//           
-//        }
-//        container.register(IExamDraftListRepository.self) { resolver in
-//            let provider = CoreDataContextProvider { err in
-//                print(err)
-//            }
-//
-//            return ExamDraftListRepository(context: provider.viewContext)
-//        }
-//
-//        container.register(ExamRepository.self) { resolver in
-//            let provider = CoreDataContextProvider { err in
-//                print(err)
-//            }
-//            return ExamRepository(context: provider.viewContext)
-//        }
+        
+        container.register(CDExamManageUseCase.self,name: "CDExamManageUseCase") { resolver in
+            return CDExamManageUseCase(cdExamRepositoryProtocol: resolver.resolve(CDExamRepositoryProtocol.self,name:"ICDExamRepositoryProtocol")!)
+        }
+        
+        //
+        //        container.register(NSPersistentContainer.self,name: "NSPersistentContainer") { resolver in
+        //            lazy var persistanceContainer:NSPersistentContainer = {
+        //                let container =  NSPersistentContainer(name: "ExamDraftContainer")
+        //                persistanceContainer.loadPersistentStores { description, err in
+        //                    print(err)
+        //                }
+        //                return container
+        //            }()
+        //            return persistanceContainer
+        //
+        //
+        //
+        //        }
+        //        container.register(IExamDraftListRepository.self) { resolver in
+        //            let provider = CoreDataContextProvider { err in
+        //                print(err)
+        //            }
+        //
+        //            return ExamDraftListRepository(context: provider.viewContext)
+        //        }
+        //
+        //        container.register(ExamRepository.self) { resolver in
+        //            let provider = CoreDataContextProvider { err in
+        //                print(err)
+        //            }
+        //            return ExamRepository(context: provider.viewContext)
+        //        }
     }
     
     

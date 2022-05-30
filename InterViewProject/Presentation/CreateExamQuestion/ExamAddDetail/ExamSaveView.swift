@@ -14,9 +14,16 @@ struct ExamSaveView: View {
             GeometryReader{proxy in
                 VStack(spacing: 40){
                     
+                    Button {
+                        vm.getDene()
+                    } label: {
+                        Text("getirr")
+                    }
+
                     
                     NavigationLink {
-                        Text("")
+                        ExamDraftListView(vm: vm)
+                        
                     } label: {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke()

@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ExamEntity" representedClassName=".ExamEntity" syncable="YES">
         <attribute name="examName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="QuestionEntity" inverseName="exam" inverseEntity="QuestionEntity"/>
     </entity>
     <entity name="QuestionEntity" representedClassName=".QuestionEntity" parentEntity="ExamEntity" syncable="YES">
@@ -13,7 +14,7 @@
         <relationship name="exam" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExamEntity" inverseName="questions" inverseEntity="ExamEntity"/>
     </entity>
     <elements>
-        <element name="ExamEntity" positionX="393.8619995117188" positionY="-246.3689880371094" width="128" height="59"/>
+        <element name="ExamEntity" positionX="393.8619995117188" positionY="-246.3689880371094" width="128" height="74"/>
         <element name="QuestionEntity" positionX="-63" positionY="-18" width="128" height="119"/>
     </elements>
 </model>

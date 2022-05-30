@@ -8,8 +8,8 @@
 import Foundation
 
 
-struct ExamModel {
-    
+struct ExamModel:Identifiable {
+    let id:UUID?
     let examName:String?
     let questions:[TTQuestion]?
     
@@ -18,6 +18,6 @@ struct ExamModel {
 
 extension ExamModel {
     func toDomainModel() -> ExamModel {
-        return .init(examName: examName, questions: questions)
+        return .init(id: id, examName: examName, questions: questions)
     }
 }
