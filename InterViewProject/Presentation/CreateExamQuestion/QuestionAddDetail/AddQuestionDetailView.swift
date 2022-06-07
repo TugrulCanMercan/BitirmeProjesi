@@ -48,7 +48,6 @@ struct AddQuestionDetailView: View {
     @State private var titleOffset = CGFloat.zero
     @State var examOrQuestion :Bool
     
-    
     init(examOrQuestion :Bool,
          currentShowedView:Binding<Selection>,
          VM: AddQuestionViewModel
@@ -59,7 +58,6 @@ struct AddQuestionDetailView: View {
         self.examOrQuestion = examOrQuestion
         self._currentShowedView = currentShowedView
         self._VM = .init(wrappedValue: VM)
-        
     }
     var body: some View {
         
@@ -67,24 +65,6 @@ struct AddQuestionDetailView: View {
         ZStack{
             QuestionView(questionContent: $VM.ttQuestion.questionContent)
                 .environmentObject(VM)
-            //                if(examOrQuestion){
-            //                    Button {
-            //                        VM.getCategory()
-            //                    } label: {
-            //                        Text("Kaydet")
-            //                            .frame(height: 50)
-            //
-            //                    }
-            //                    .disabled(VM.saveButtonDisabled)
-            //                }else{
-            //                    Button {
-            //                        VM.examAddQuestion()
-            //
-            //                    } label: {
-            //                        Text("Ekle")
-            //                            .frame(height: 50)
-            //                    }
-            //                }
             
             if VM.showPicker{
                 picker()
@@ -140,6 +120,8 @@ struct CategorySection: View {
         }
     }
 }
+
+
 
 
 
@@ -207,26 +189,7 @@ struct QuestionSelectionSection: View {
             }
         }
         .onDelete(perform: delete)
-        
-        //        ForEach(0...VM.questions.count,id:\.self) { val in
-        //                    if val <= 4{
-        //                        VStack{
-        //                            HStack{
-        //
-        //                                Text("\(QuestionOptions.options(val).result)) Şıkkı")
-        //                                    .foregroundColor(VM.questionAnswer == QuestionOptions.options(val).result ? .blue : .black)
-        //                                    .onTapGesture {
-        //                                        VM.questionAnswer = QuestionOptions.options(val).result
-        //                                    }
-        //                                TextEditor(text: $VM.questions[val])
-        //                                //                            TextField("\(QuestionOptions.options(val).result) şıkkını oluşturun" , text:  $VM.quesitons[val])
-        //
-        //                            }
-        //                        }
-        //
-        //                    }
-        //                }
-        //                .onDelete(perform: delete)
+
         
         
     }
@@ -239,6 +202,8 @@ struct QuestionSelectionSection: View {
 struct QuestionView: View {
     @EnvironmentObject var VM:AddQuestionViewModel
     @Binding var questionContent:String
+    
+    @State var showImagePicker:Bool = false
     var body: some View {
         VStack{
             
@@ -248,11 +213,39 @@ struct QuestionView: View {
                 
                 CategorySection(showPicker: $VM.showPicker, selectedPickerName: VM.ttQuestion.selectedPicker)
                 
+                Section {
+                    
+                    VStack {
+                        if let image = VM.image {
+                            Image(uiImage: image)
+                                .resizable()
+                                .frame(maxHeight: 250)
+                        }else {
+                            Button {
+                                showImagePicker.toggle()
+                            } label: {
+                                Text("resimleri göster")
+                            }
+                        }
+
+                    }
+                   
+                    
+                } header: {
+                    Text("Resim Ekle")
+                }
+
+                
                 QuestionContentSection(questionContent: $questionContent)
                 
                 QuestionSelectionSection()
                 
             }
+            .fullScreenCover(isPresented: $showImagePicker, onDismiss: nil, content: {
+                TTImagePicker(image: $VM.image)
+            })
+            
+            
         }
     }
 }

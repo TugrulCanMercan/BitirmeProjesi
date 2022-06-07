@@ -6,8 +6,9 @@
         <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="QuestionEntity" inverseName="exam" inverseEntity="QuestionEntity"/>
     </entity>
     <entity name="QuestionEntity" representedClassName=".QuestionEntity" parentEntity="ExamEntity" syncable="YES">
-        <attribute name="category" optional="YES" attributeType="Transformable" customClassName="[String]"/>
-        <attribute name="quesitons" optional="YES" attributeType="Transformable" customClassName="[String:String]"/>
+        <attribute name="category" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="quesitons" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String:String]"/>
         <attribute name="questionAnswer" optional="YES" attributeType="String"/>
         <attribute name="questionContent" optional="YES" attributeType="String"/>
         <attribute name="selectedPicker" optional="YES" attributeType="String"/>
@@ -15,6 +16,6 @@
     </entity>
     <elements>
         <element name="ExamEntity" positionX="393.8619995117188" positionY="-246.3689880371094" width="128" height="74"/>
-        <element name="QuestionEntity" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="QuestionEntity" positionX="-63" positionY="-18" width="128" height="134"/>
     </elements>
 </model>

@@ -20,7 +20,7 @@ struct ExamAddDetail: View {
     
     @Binding var currentShowedView:Selection
     
-    @StateObject var VM = ExamQuestionViewModel()
+    @ObservedObject var VM : ExamQuestionViewModel
     @State var show = true
     @State var index:Int = 0
     
@@ -72,11 +72,11 @@ struct ExamAddDetail: View {
                             HStack{
                                 Text("Soru Numarası \(index)")
                                 Spacer()
-                                Button("Sınavı Kaydet") {
+                                Button("Sınavı Kaydet veya Çık") {
                                     showingSheet.toggle()
                                 }
                                 .sheet(isPresented: $showingSheet) {
-                                    ExamSaveView(vm: VM)
+                                    ExamSaveView(vm: VM,currentShowedView:$currentShowedView)
                                 }
                             }
                             .padding(.horizontal)
@@ -86,13 +86,32 @@ struct ExamAddDetail: View {
                             
                             AddQuestionDetailView(examOrQuestion: false, currentShowedView: $currentShowedView, VM: vm)
                                 .tag(idx)
-                            Button {
-                                VM.examAddQuestion()
-                                
-                            } label: {
-                                Text("Soru Eklemeye Devam Et")
+                            if VM.saveButtonCheck ?? false {
+                                HStack{
+                                    Button {
+                                        VM.examAddQuestion()
+                                        
+                                    } label: {
+                                        Text("Soru Eklemeye Devam Et")
+                                    }
+                                    .padding()
+                                    Button {
+                                        VM.saveExam()   
+                                    } label: {
+                                        Text("Soru Eklemeye Devam Et")
+                                    }
+                                    .padding()
+                                }
+                            } else {
+                                Button {
+                                    VM.examAddQuestion()
+                                    
+                                } label: {
+                                    Text("Soru Eklemeye Devam Et")
+                                }
+                                .padding()
                             }
-                            .padding()
+                           
                         }
                         .background(Color(UIColor.systemGray6))
                         .onChange(of: VM.questionList) { newValue in
@@ -129,7 +148,7 @@ struct ViewOffsetKey: PreferenceKey {
 
 struct ExamAddDetail_Previews: PreviewProvider {
     static var previews: some View {
-        ExamAddDetail(currentShowedView: .constant(.showExamQuestion))
+        ExamAddDetail(currentShowedView: .constant(.showExamQuestion), VM: ExamQuestionViewModel())
     }
 }
 

@@ -17,6 +17,6 @@ protocol CDExamRepositoryProtocol{
     
     func updateExam(identifier id : UUID) -> ExamEntity?
     
-    func createExam(Item: ExamEntity) -> String?
+    func createExam(Item: ExamModel) -> String?
     
 }

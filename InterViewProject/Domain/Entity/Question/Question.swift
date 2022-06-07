@@ -8,6 +8,7 @@
 import Foundation
 
 struct TTQuestion:Hashable {
+    let UUID:UUID?
     var category:[String]
     var selectedPicker:String
     var questionContent:String

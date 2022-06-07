@@ -73,51 +73,51 @@ extension RepositoryProtocol{
 
 
 
-final class CoreDataManager {
-    
-    private init () { }
-    
-    static let shared = CoreDataManager()
-    
-    
-    lazy var persistentContainer:NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "ExamDraftContainer")
-        container.loadPersistentStores { description, error in
-            if let error = error {
-                print("Hata alındı hata açıklaması : \(error)")
-            } else {
-                print("DB bağlantısı başarılı \(description)")
-            }
-        }
-        return container
-        
-    }()
-    
-    lazy var context = persistentContainer.viewContext
-    
-    func saveContext() {
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }
-    
-    func fetchManagedObject<T: NSManagedObject>(managedObject: T.Type) -> [T]?
-    {
-        do {
-            guard let result = try context.fetch(managedObject.fetchRequest()) as? [T] else {return nil}
-            
-            return result
-            
-        } catch let error {
-            debugPrint(error)
-        }
-        
-        return nil
-    }
-    
-}
+//final class CoreDataManager {
+//
+//    private init () { }
+//
+//    static let shared = CoreDataManager()
+//
+//
+//    lazy var persistentContainer:NSPersistentContainer = {
+//        let container = NSPersistentContainer(name: "ExamDraftContainer")
+//        container.loadPersistentStores { description, error in
+//            if let error = error {
+//                print("Hata alındı hata açıklaması : \(error)")
+//            } else {
+//                print("DB bağlantısı başarılı \(description)")
+//            }
+//        }
+//        return container
+//
+//    }()
+//
+//    lazy var context = persistentContainer.viewContext
+//
+//    func saveContext() {
+//        if context.hasChanges {
+//            do {
+//                try context.save()
+//            } catch {
+//                let nserror = error as NSError
+//                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+//            }
+//        }
+//    }
+//
+//    func fetchManagedObject<T: NSManagedObject>(managedObject: T.Type) -> [T]?
+//    {
+//        do {
+//            guard let result = try context.fetch(managedObject.fetchRequest()) as? [T] else {return nil}
+//
+//            return result
+//
+//        } catch let error {
+//            debugPrint(error)
+//        }
+//
+//        return nil
+//    }
+//
+//}

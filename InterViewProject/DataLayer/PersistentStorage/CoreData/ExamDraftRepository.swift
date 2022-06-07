@@ -65,14 +65,7 @@ protocol ExamDraftProtocol:RepositoryProtocol {
 
 
 class ExamDraftRepo: CDExamRepositoryProtocol,ExamDraftProtocol{
-    
-    
-   
-    
-    
-    
-    
-    
+
     var context: NSManagedObjectContext
     
     typealias Entity = ExamEntity
@@ -98,12 +91,35 @@ class ExamDraftRepo: CDExamRepositoryProtocol,ExamDraftProtocol{
         return nil
     }
     
-    func createExam(Item: ExamEntity) -> String? {
-        return create(item: Item)
+    func createExam(Item: ExamModel) -> String? {
+        let examEntity = ExamEntity(context: context)
+
+        var setquest = Set<QuestionEntity>()
+        
+        Item.questions?.forEach({ result in
+            let questionEntity = QuestionEntity(context: context)
+          
+            
+            questionEntity.category = result.category
+            questionEntity.quesitons = result.quesitons
+            questionEntity.questionAnswer = result.questionAnswer
+            questionEntity.questionContent = result.questionContent
+            questionEntity.selectedPicker = result.selectedPicker
+            setquest.insert(questionEntity)
+            
+        })
+        examEntity.questions = setquest
+        
+        
+        
+        examEntity.id = Item.id
+        
+        examEntity.examName = Item.examName
+        return create(item: examEntity)
     }
     
     
-    func getAllExam() -> [Entity]? {
+    func getAllExam() -> [ExamEntity]? {
         
         guard let result = getAll() else { return nil }
         return result

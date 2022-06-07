@@ -12,7 +12,7 @@ protocol QuestionExamRepositoryProtocol{
     
     func addQuestion(question:TTQuestion,completionHandler: @escaping (Result<TTQuestion,Error>) -> Void)
         
-    func addExam(question:TTQuestion,completionHandler: @escaping (Result<TTQuestion,Error>) -> Void)
+    func addExam(exam:ExamModel,completionHandler: @escaping (Result<BaseEntity<ResponseMessage>,Error>) -> Void)
     
     func getCategoryList(categoryList:[String],completionHandler: @escaping (Result<TTQuestion,Error>) -> Void)
     

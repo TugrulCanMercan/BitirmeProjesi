@@ -16,6 +16,7 @@ extension QuestionEntity {
         return NSFetchRequest<QuestionEntity>(entityName: "QuestionEntity")
     }
 
+    @NSManaged public var id: UUID?
     @NSManaged public var category: [String]?
     @NSManaged public var quesitons: [String:String]?
     @NSManaged public var questionAnswer: String?

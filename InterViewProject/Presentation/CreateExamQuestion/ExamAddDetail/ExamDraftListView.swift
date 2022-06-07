@@ -16,11 +16,17 @@ struct ExamDraftListView: View {
     var body: some View {
         List{
             ForEach(vm.examList) { result in
-                Text(result.examName ?? "boş")
+                if let examName = result.examName,
+                   let examId = result.id
+                {
+                    Button("\(examName)") {
+                        vm.getExam(id: examId)
+                    }
+                }
             }
         }
         .onAppear {
-            vm.getExam()
+            vm.getAllExam()
         }
     }
 }

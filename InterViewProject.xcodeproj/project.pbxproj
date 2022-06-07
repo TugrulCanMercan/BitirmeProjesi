@@ -43,7 +43,7 @@
 		E4080435280EFD7B004A2537 /* UserAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4080432280EFD7B004A2537 /* UserAccessToken.swift */; };
 		E4080436280EFD7B004A2537 /* UserLoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4080433280EFD7B004A2537 /* UserLoginEntity.swift */; };
 		E4080437280EFD7B004A2537 /* UserSignUpEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4080434280EFD7B004A2537 /* UserSignUpEntity.swift */; };
-		E408043F280EFDD9004A2537 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E408043E280EFDD9004A2537 /* APIEndpoints.swift */; };
+		E408043F280EFDD9004A2537 /* APIEndpoints+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E408043E280EFDD9004A2537 /* APIEndpoints+Factory.swift */; };
 		E4080446280EFE04004A2537 /* UUIDRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4080443280EFE04004A2537 /* UUIDRequestDTO.swift */; };
 		E4080447280EFE04004A2537 /* UserSignUpDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4080444280EFE04004A2537 /* UserSignUpDTO.swift */; };
 		E4080448280EFE04004A2537 /* UserLoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4080445280EFE04004A2537 /* UserLoginRequestDTO.swift */; };
@@ -65,6 +65,7 @@
 		E40DDD9528378FFB00F94DA1 /* ExamDraftListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40DDD9428378FFB00F94DA1 /* ExamDraftListView.swift */; };
 		E40DDD972837921500F94DA1 /* ExamDraftListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40DDD962837921500F94DA1 /* ExamDraftListRepository.swift */; };
 		E40DDD9A2837979000F94DA1 /* ExamDraftContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E40DDD982837979000F94DA1 /* ExamDraftContainer.xcdatamodeld */; };
+		E41E0610284F96C30079E0D4 /* BaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E060F284F96C30079E0D4 /* BaseEntity.swift */; };
 		E424004728187A90001FABAD /* ExamQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E424004628187A90001FABAD /* ExamQuestionView.swift */; };
 		E48B987B2811785400392AA4 /* TTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48B987A2811785400392AA4 /* TTTextField.swift */; };
 		E49B9709283E12FD00270470 /* ExamDraftRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B9708283E12FD00270470 /* ExamDraftRepository.swift */; };
@@ -98,6 +99,8 @@
 		E4C20A0B281B5CB20036F91E /* QuestionExamRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C20A0A281B5CB20036F91E /* QuestionExamRepositoryProtocol.swift */; };
 		E4C20A0D281B5DDE0036F91E /* QuestionExamRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C20A0C281B5DDE0036F91E /* QuestionExamRepository.swift */; };
 		E4CACD73282FCFFA004322EF /* ExamAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CACD72282FCFFA004322EF /* ExamAddViewModel.swift */; };
+		E4FADAEA284D0FFD00A0D275 /* TTImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FADAE9284D0FFD00A0D275 /* TTImagePicker.swift */; };
+		E4FCD99E284DEB1E00CCDC5D /* ExamQuestionRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FCD99D284DEB1E00CCDC5D /* ExamQuestionRequestDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,7 +172,7 @@
 		E4080432280EFD7B004A2537 /* UserAccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccessToken.swift; sourceTree = "<group>"; };
 		E4080433280EFD7B004A2537 /* UserLoginEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginEntity.swift; sourceTree = "<group>"; };
 		E4080434280EFD7B004A2537 /* UserSignUpEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignUpEntity.swift; sourceTree = "<group>"; };
-		E408043E280EFDD9004A2537 /* APIEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		E408043E280EFDD9004A2537 /* APIEndpoints+Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIEndpoints+Factory.swift"; sourceTree = "<group>"; };
 		E4080443280EFE04004A2537 /* UUIDRequestDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UUIDRequestDTO.swift; sourceTree = "<group>"; };
 		E4080444280EFE04004A2537 /* UserSignUpDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignUpDTO.swift; sourceTree = "<group>"; };
 		E4080445280EFE04004A2537 /* UserLoginRequestDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginRequestDTO.swift; sourceTree = "<group>"; };
@@ -189,6 +192,7 @@
 		E40DDD9428378FFB00F94DA1 /* ExamDraftListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDraftListView.swift; sourceTree = "<group>"; };
 		E40DDD962837921500F94DA1 /* ExamDraftListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDraftListRepository.swift; sourceTree = "<group>"; };
 		E40DDD992837979000F94DA1 /* ExamDraftContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExamDraftContainer.xcdatamodel; sourceTree = "<group>"; };
+		E41E060F284F96C30079E0D4 /* BaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEntity.swift; sourceTree = "<group>"; };
 		E424004628187A90001FABAD /* ExamQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamQuestionView.swift; sourceTree = "<group>"; };
 		E48B987A2811785400392AA4 /* TTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTextField.swift; sourceTree = "<group>"; };
 		E49B9708283E12FD00270470 /* ExamDraftRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDraftRepository.swift; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 		E4C20A0A281B5CB20036F91E /* QuestionExamRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionExamRepositoryProtocol.swift; sourceTree = "<group>"; };
 		E4C20A0C281B5DDE0036F91E /* QuestionExamRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionExamRepository.swift; sourceTree = "<group>"; };
 		E4CACD72282FCFFA004322EF /* ExamAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamAddViewModel.swift; sourceTree = "<group>"; };
+		E4FADAE9284D0FFD00A0D275 /* TTImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTImagePicker.swift; sourceTree = "<group>"; };
+		E4FCD99D284DEB1E00CCDC5D /* ExamQuestionRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamQuestionRequestDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +331,7 @@
 				E408040F280EFBF4004A2537 /* TTSecureField.swift */,
 				E4080407280EFBD3004A2537 /* TTModifier */,
 				E48B987A2811785400392AA4 /* TTTextField.swift */,
+				E4FADAE9284D0FFD00A0D275 /* TTImagePicker.swift */,
 			);
 			path = TTSubComponents;
 			sourceTree = "<group>";
@@ -433,14 +440,13 @@
 		E408042B280EFD2B004A2537 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				E41E060E284F96AE0079E0D4 /* BaseEntity */,
+				E41E0606284F8EB00079E0D4 /* Exam */,
+				E41E0605284F8EA10079E0D4 /* Question */,
+				E41E0604284F8E8D0079E0D4 /* User */,
 				E4B4C3212844F1FB0001CD79 /* CoreDataEntity */,
-				E4080432280EFD7B004A2537 /* UserAccessToken.swift */,
-				E4080433280EFD7B004A2537 /* UserLoginEntity.swift */,
-				E4080434280EFD7B004A2537 /* UserSignUpEntity.swift */,
 				E4080471280F18B2004A2537 /* ErrorObject.swift */,
 				E4A2211B28104456000C3510 /* UserInfo.swift */,
-				E4C20A06281AF5640036F91E /* Question.swift */,
-				E49BF0442837D387001A3D65 /* ExamModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -482,7 +488,7 @@
 			isa = PBXGroup;
 			children = (
 				E4080440280EFDDF004A2537 /* DataMapping */,
-				E408043E280EFDD9004A2537 /* APIEndpoints.swift */,
+				E408043E280EFDD9004A2537 /* APIEndpoints+Factory.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -511,31 +517,26 @@
 		E4080440280EFDDF004A2537 /* DataMapping */ = {
 			isa = PBXGroup;
 			children = (
-				E4080442280EFDF0004A2537 /* Response */,
-				E4080441280EFDEA004A2537 /* Request */,
+				E41E060B284F8FE10079E0D4 /* ExamDTO+Mapping */,
+				E41E060A284F8F2B0079E0D4 /* Kontrol_et_sil */,
+				E41E0607284F8ECE0079E0D4 /* UserDTO+Mapping */,
 			);
 			path = DataMapping;
 			sourceTree = "<group>";
 		};
-		E4080441280EFDEA004A2537 /* Request */ = {
+		E4080441280EFDEA004A2537 /* RequestDTO */ = {
 			isa = PBXGroup;
 			children = (
-				E4080445280EFE04004A2537 /* UserLoginRequestDTO.swift */,
-				E4080444280EFE04004A2537 /* UserSignUpDTO.swift */,
 				E4080443280EFE04004A2537 /* UUIDRequestDTO.swift */,
 			);
-			path = Request;
+			path = RequestDTO;
 			sourceTree = "<group>";
 		};
-		E4080442280EFDF0004A2537 /* Response */ = {
+		E4080442280EFDF0004A2537 /* ResponseDTO */ = {
 			isa = PBXGroup;
 			children = (
-				E408044A280EFE0E004A2537 /* ResponseMessageDTO.swift */,
-				E408044B280EFE0E004A2537 /* UserAccessResponseDTO.swift */,
-				E4080449280EFE0E004A2537 /* UserResponseDTO.swift */,
-				E4A22119281040C3000C3510 /* UserInformationDTO.swift */,
 			);
-			path = Response;
+			path = ResponseDTO;
 			sourceTree = "<group>";
 		};
 		E4080456280EFE7C004A2537 /* Infrastructure */ = {
@@ -570,6 +571,102 @@
 			children = (
 			);
 			path = DataMapping;
+			sourceTree = "<group>";
+		};
+		E41E0604284F8E8D0079E0D4 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				E4080432280EFD7B004A2537 /* UserAccessToken.swift */,
+				E4080434280EFD7B004A2537 /* UserSignUpEntity.swift */,
+				E4080433280EFD7B004A2537 /* UserLoginEntity.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		E41E0605284F8EA10079E0D4 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				E4C20A06281AF5640036F91E /* Question.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		E41E0606284F8EB00079E0D4 /* Exam */ = {
+			isa = PBXGroup;
+			children = (
+				E49BF0442837D387001A3D65 /* ExamModel.swift */,
+			);
+			path = Exam;
+			sourceTree = "<group>";
+		};
+		E41E0607284F8ECE0079E0D4 /* UserDTO+Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				E41E0609284F8EF30079E0D4 /* Response */,
+				E41E0608284F8EED0079E0D4 /* Request */,
+			);
+			path = "UserDTO+Mapping";
+			sourceTree = "<group>";
+		};
+		E41E0608284F8EED0079E0D4 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				E4080444280EFE04004A2537 /* UserSignUpDTO.swift */,
+				E4080445280EFE04004A2537 /* UserLoginRequestDTO.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		E41E0609284F8EF30079E0D4 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				E4A22119281040C3000C3510 /* UserInformationDTO.swift */,
+				E4080449280EFE0E004A2537 /* UserResponseDTO.swift */,
+				E408044B280EFE0E004A2537 /* UserAccessResponseDTO.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		E41E060A284F8F2B0079E0D4 /* Kontrol_et_sil */ = {
+			isa = PBXGroup;
+			children = (
+				E4080441280EFDEA004A2537 /* RequestDTO */,
+				E4080442280EFDF0004A2537 /* ResponseDTO */,
+			);
+			path = Kontrol_et_sil;
+			sourceTree = "<group>";
+		};
+		E41E060B284F8FE10079E0D4 /* ExamDTO+Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				E41E060D284F8FF40079E0D4 /* Response */,
+				E41E060C284F8FEE0079E0D4 /* Request */,
+			);
+			path = "ExamDTO+Mapping";
+			sourceTree = "<group>";
+		};
+		E41E060C284F8FEE0079E0D4 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				E4FCD99D284DEB1E00CCDC5D /* ExamQuestionRequestDTO.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		E41E060D284F8FF40079E0D4 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				E408044A280EFE0E004A2537 /* ResponseMessageDTO.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		E41E060E284F96AE0079E0D4 /* BaseEntity */ = {
+			isa = PBXGroup;
+			children = (
+				E41E060F284F96C30079E0D4 /* BaseEntity.swift */,
+			);
+			path = BaseEntity;
 			sourceTree = "<group>";
 		};
 		E424004528187A43001FABAD /* CreateExamQuestion */ = {
@@ -842,6 +939,7 @@
 				E4C20A0B281B5CB20036F91E /* QuestionExamRepositoryProtocol.swift in Sources */,
 				E4080431280EFD6B004A2537 /* AuthRepositoryProtocol.swift in Sources */,
 				E4080418280EFC87004A2537 /* HomeView.swift in Sources */,
+				E4FCD99E284DEB1E00CCDC5D /* ExamQuestionRequestDTO.swift in Sources */,
 				E4080472280F18B2004A2537 /* ErrorObject.swift in Sources */,
 				E4080447280EFE04004A2537 /* UserSignUpDTO.swift in Sources */,
 				E424004728187A90001FABAD /* ExamQuestionView.swift in Sources */,
@@ -877,7 +975,8 @@
 				E49B9709283E12FD00270470 /* ExamDraftRepository.swift in Sources */,
 				E408041E280EFCAD004A2537 /* LoginVİew.swift in Sources */,
 				E4080424280EFCE8004A2537 /* ProfileView.swift in Sources */,
-				E408043F280EFDD9004A2537 /* APIEndpoints.swift in Sources */,
+				E41E0610284F96C30079E0D4 /* BaseEntity.swift in Sources */,
+				E408043F280EFDD9004A2537 /* APIEndpoints+Factory.swift in Sources */,
 				E4080448280EFE04004A2537 /* UserLoginRequestDTO.swift in Sources */,
 				E40803C9280EFA12004A2537 /* InterViewProjectApp.swift in Sources */,
 				E4B4C3232844F8310001CD79 /* CDExamManageUseCase.swift in Sources */,
@@ -903,6 +1002,7 @@
 				E4B071A1282E3C8100832B3B /* KSSnapCrouselEffect.swift in Sources */,
 				E48B987B2811785400392AA4 /* TTTextField.swift in Sources */,
 				E4080414280EFBF4004A2537 /* TTLabelledDivider.swift in Sources */,
+				E4FADAEA284D0FFD00A0D275 /* TTImagePicker.swift in Sources */,
 				E4080404280EFB85004A2537 /* CustomNavLink.swift in Sources */,
 				E40803F2280EFB59004A2537 /* AppTabBarView.swift in Sources */,
 				E4C20A00281AC82A0036F91E /* TTPopUp.swift in Sources */,

@@ -17,31 +17,8 @@ final class CDExamManageUseCase {
     
     
     func createExam(Item :ExamModel) -> String? {
-        let examEntity = ExamEntity()
 
-        var setquest = Set<QuestionEntity>()
-        
-        Item.questions?.forEach({ result in
-            let questionEntity = QuestionEntity()
-          
-            
-            questionEntity.category = result.category
-            questionEntity.quesitons = result.quesitons
-            questionEntity.questionAnswer = result.questionAnswer
-            questionEntity.questionContent = result.questionContent
-            questionEntity.selectedPicker = result.selectedPicker
-            setquest.insert(questionEntity)
-            
-        })
-        examEntity.questions = setquest
-        
-        
-        
-        examEntity.id = Item.id
-        
-        examEntity.examName = Item.examName
-        
-        let result = cdExamRepositoryProtocol.createExam(Item: examEntity)
+        let result = cdExamRepositoryProtocol.createExam(Item: Item)
         return result
     }
     
@@ -50,6 +27,13 @@ final class CDExamManageUseCase {
         let examList = list?.map({ item in
             return item.toDomainModel()
         })
+            
         return examList
+    }
+    func getExam(identifier id: UUID) -> ExamModel? {
+        let exam = cdExamRepositoryProtocol.getExamById(identifier: id)
+        
+        return exam?.toDomainModel()
+        
     }
 }

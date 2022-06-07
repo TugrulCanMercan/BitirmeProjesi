@@ -47,6 +47,8 @@ struct ExamQuestionView: View {
     @State var show = false
     @State var showAddQuestionDetail = false
     @State var selection:Selection = .showExamQuestion
+    @StateObject var vm = AddQuestionViewModel()
+    @ObservedObject var exmVm = ExamQuestionViewModel()
     @Namespace var animation
     
     var body: some View {
@@ -111,12 +113,12 @@ struct ExamQuestionView: View {
                     }
                 }
             case .showAddQuestionDetail:
-                AddQuestionDetailView(examOrQuestion: true, currentShowedView: $selection, VM: AddQuestionViewModel())
+                AddQuestionDetailView(examOrQuestion: true, currentShowedView: $selection, VM: vm)
                 
 
                     .matchedGeometryEffect(id: "animation", in: animation)
             case .showExamDetail:
-                ExamAddDetail(currentShowedView: $selection)
+                ExamAddDetail(currentShowedView: $selection, VM: exmVm)
                     .matchedGeometryEffect(id: "animation", in: animation)
             }
             

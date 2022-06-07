@@ -21,7 +21,7 @@ class AddQuestionViewModel:ObservableObject,Identifiable,Equatable{
     @Published var title:String = ""
     @Published var showPicker = false
     /// Beckend ten gelecek
-    
+    @Published var image:UIImage?
     
     @Published var ttQuestion:TTQuestion = TTQuestion(category: ["Swift","TypeScript"], selectedPicker: "", questionContent: "", quesitons: ["":""], questionAnswer: "")
     

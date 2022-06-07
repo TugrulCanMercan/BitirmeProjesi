@@ -17,20 +17,34 @@ final class QuestionExamRepository{
 }
 
 
-//extension QuestionExamRepository:QuestionExamRepositoryProtocol{
-//    func addQuestion(question: Question, completionHandler: @escaping (Result<Question, Error>) -> Void) {
-//        
-////        let endpoint = 
-////        networkService.request(with: <#T##ResponseRequestable#>, completion: <#T##(Result<Decodable, DataTransferError>) -> Void#>)
-//    }
-//    
-//    func addExam(question: Question, completionHandler: @escaping (Result<Question, Error>) -> Void) {
-//        
-//    }
-//    
-//    func getCategoryList(categoryList: [String], completionHandler: @escaping (Result<Question, Error>) -> Void) {
-//        
-//    }
-//    
-//    
-//}
+extension QuestionExamRepository:QuestionExamRepositoryProtocol{
+    func addQuestion(question: TTQuestion, completionHandler: @escaping (Result<TTQuestion, Error>) -> Void) {
+        print("boş")
+    }
+
+    func addExam(exam: ExamModel, completionHandler: @escaping (Result<BaseEntity<ResponseMessage>, Error>) -> Void) {
+//        Exam questionsdto daki alan aslında id listesi
+        let endpoint = APIEndpoints.Exam.addExam(exam: ExamRequestDTO(UUID: exam.id,
+                                                                      examTitle: exam.examName,
+                                                                      examCategory:nil ,
+                                                                      examStartTime: exam.examStartDate,
+                                                                      examEndTime: exam.examEndDate,
+                                                                      examQuestions: exam.questions?.compactMap({$0.UUID?.uuidString}),
+                                                                      examTotalPoint: nil))
+        networkService.request(with: endpoint) { result in
+            switch result {
+                
+            case .success(let response):
+                completionHandler(.success(BaseEntity<ResponseMessage>.init(responseMessage: "başarılı", data: response.toDomain(), responseStatus: "200")))
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+        }
+    }
+    
+    func getCategoryList(categoryList: [String], completionHandler: @escaping (Result<TTQuestion, Error>) -> Void) {
+        
+    }
+    
+    
+}
