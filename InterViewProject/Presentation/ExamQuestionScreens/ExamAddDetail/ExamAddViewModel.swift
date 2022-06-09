@@ -17,16 +17,26 @@ class ExamQuestionViewModel:ObservableObject{
     var allQuestion:[TTQuestion] = []
     @Published var entity:[ExamEntity] = []
     @Published var examList:[ExamModel] = []
-    @Published var saveButtonCheck:Bool?
+    @Published var saveButtonCheck:Bool = false
     
     let exam:ExamModel?
     
     var examManageUsecase:CDExamManageUseCase?
     let questionExamUsecase:IQuestionAndExamUseCase?
     init(){
-        self.questionExamUsecase = DIManager.shared.container.resolve(IQuestionAndExamUseCase.self,name: "IQuestionAndExamUseCase")
+        self.exam = nil
         self.examManageUsecase = DIManager.shared.container.resolve(CDExamManageUseCase.self,name: "CDExamManageUseCase")
-        saveCheck()
+        self.questionExamUsecase = DIManager.shared.container.resolve(IQuestionAndExamUseCase.self,name: "IQuestionAndExamUseCase")
+        $questionList
+            .map { val in
+                return val.count >= 5 ? true : false
+            }
+            .sink { saveBtnChck in
+                self.saveButtonCheck = saveBtnChck
+            }
+            .store(in: &cancellable)
+        
+        
     }
     
     func examAddQuestion(){
@@ -71,20 +81,14 @@ class ExamQuestionViewModel:ObservableObject{
         })
     }
     
-    func saveCheck(){
-        $questionList.count()
-            .map { val in
-                return val >= 5 ? true : false
-            }
-            .sink {[saveButtonCheck] saveBtnChck in
-                self.saveButtonCheck = saveButtonCheck
-            }
-            .store(in: &cancellable)
-    }
     func saveExam(){
-        guard let exam = exam else {
-            return
+        let questions = questionList.map { vm in
+            vm.ttQuestion
         }
+        let exam = ExamModel(id: UUID(),
+                             examName: examName,
+                             questions: questions)
+
         questionExamUsecase?.addExam(exam: exam, completionHandler: { result in
             switch result {
                 

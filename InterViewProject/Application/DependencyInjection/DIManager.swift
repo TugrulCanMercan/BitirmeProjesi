@@ -41,7 +41,7 @@ final class DIManager{
         }
         
         container.register(NetworkConfigurable.self, name: "IBaseApıConfig") { _ in
-            let baseUrl = URL(string: "http://localhost:5001")!
+            let baseUrl = URL(string: "http://localhost:5002")!
             return ApiDataNetworkConfig(baseURL: baseUrl)
         }
         

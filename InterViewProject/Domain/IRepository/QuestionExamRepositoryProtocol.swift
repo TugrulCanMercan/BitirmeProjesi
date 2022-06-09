@@ -16,5 +16,10 @@ protocol QuestionExamRepositoryProtocol{
     
     func getCategoryList(categoryList:[String],completionHandler: @escaping (Result<TTQuestion,Error>) -> Void)
     
+    func getExamId(examId:String,completionHandler: @escaping (Result<BaseEntity<ExamModel>,Error>) -> Void)
+    
+    func getAllQuestionList(questionId:[String],completionHandler: @escaping (Result<BaseEntity<[TTQuestion]>,Error>) -> Void)
+    
+    func postResultExamTurnIn(exam:ExamModel, completionHandler: @escaping (Result<BaseEntity<ResponseMessage>,Error>) -> Void)
     
 }

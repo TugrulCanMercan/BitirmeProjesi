@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 import SwiftUI
-
+import Common
 
 
 
@@ -23,7 +23,7 @@ class AddQuestionViewModel:ObservableObject,Identifiable,Equatable{
     /// Beckend ten gelecek
     @Published var image:UIImage?
     
-    @Published var ttQuestion:TTQuestion = TTQuestion(category: ["Swift","TypeScript"], selectedPicker: "", questionContent: "", quesitons: ["":""], questionAnswer: "")
+    @Published var ttQuestion:TTQuestion = TTQuestion(UUID: nil, category: ["Swift","TypeScript"], selectedPicker: "", questionContent: "", quesitons: ["":""], questionAnswer: "")
     
     @Published var saveButtonDisabled = true
     

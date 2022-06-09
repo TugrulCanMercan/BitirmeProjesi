@@ -8,10 +8,10 @@
 import Foundation
 
 
-struct ExamModel:Identifiable{
+struct ExamModel:Identifiable,Hashable{
     let id:UUID?
     let examName:String?
-    let questions:[TTQuestion]?
+    var questions:[TTQuestion]?
     let examStartDate:Date?
     let examEndDate:Date?
     

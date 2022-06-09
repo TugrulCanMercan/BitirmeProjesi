@@ -48,7 +48,7 @@
 		E4080447280EFE04004A2537 /* UserSignUpDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4080444280EFE04004A2537 /* UserSignUpDTO.swift */; };
 		E4080448280EFE04004A2537 /* UserLoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4080445280EFE04004A2537 /* UserLoginRequestDTO.swift */; };
 		E408044C280EFE0E004A2537 /* UserResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4080449280EFE0E004A2537 /* UserResponseDTO.swift */; };
-		E408044D280EFE0E004A2537 /* ResponseMessageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E408044A280EFE0E004A2537 /* ResponseMessageDTO.swift */; };
+		E408044D280EFE0E004A2537 /* ResponseMessageDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E408044A280EFE0E004A2537 /* ResponseMessageDTO+Mapping.swift */; };
 		E408044E280EFE0E004A2537 /* UserAccessResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E408044B280EFE0E004A2537 /* UserAccessResponseDTO.swift */; };
 		E4080458280EFE7C004A2537 /* Infrastructure.h in Headers */ = {isa = PBXBuildFile; fileRef = E4080457280EFE7C004A2537 /* Infrastructure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E408045B280EFE7C004A2537 /* Infrastructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4080455280EFE7C004A2537 /* Infrastructure.framework */; };
@@ -67,13 +67,27 @@
 		E40DDD9A2837979000F94DA1 /* ExamDraftContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E40DDD982837979000F94DA1 /* ExamDraftContainer.xcdatamodeld */; };
 		E41E0610284F96C30079E0D4 /* BaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E060F284F96C30079E0D4 /* BaseEntity.swift */; };
 		E424004728187A90001FABAD /* ExamQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E424004628187A90001FABAD /* ExamQuestionView.swift */; };
+		E44340492850D12C00E21CB9 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44340482850D12C00E21CB9 /* HomeScreen.swift */; };
+		E443404D2850E59400E21CB9 /* TakingTheExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = E443404C2850E59400E21CB9 /* TakingTheExam.swift */; };
+		E443404F28513D7F00E21CB9 /* TakingTheExamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E443404E28513D7F00E21CB9 /* TakingTheExamViewModel.swift */; };
+		E44340512851486C00E21CB9 /* GetExamByIdRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44340502851486C00E21CB9 /* GetExamByIdRequestDTO.swift */; };
+		E443405328514A5E00E21CB9 /* ExamResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E443405228514A5E00E21CB9 /* ExamResponseDTO+Mapping.swift */; };
 		E48B987B2811785400392AA4 /* TTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48B987A2811785400392AA4 /* TTTextField.swift */; };
+		E48BF3BB2852807200DA8A7B /* ExamResultDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BF3BA2852807200DA8A7B /* ExamResultDTO+Mapping.swift */; };
 		E49B9709283E12FD00270470 /* ExamDraftRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B9708283E12FD00270470 /* ExamDraftRepository.swift */; };
 		E49BF0452837D387001A3D65 /* ExamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49BF0442837D387001A3D65 /* ExamModel.swift */; };
 		E49BF04A2837D6B0001A3D65 /* ExamEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49BF0462837D6B0001A3D65 /* ExamEntity+CoreDataClass.swift */; };
 		E49BF04B2837D6B0001A3D65 /* ExamEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49BF0472837D6B0001A3D65 /* ExamEntity+CoreDataProperties.swift */; };
 		E49BF04C2837D6B0001A3D65 /* QuestionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49BF0482837D6B0001A3D65 /* QuestionEntity+CoreDataClass.swift */; };
 		E49BF04D2837D6B0001A3D65 /* QuestionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49BF0492837D6B0001A3D65 /* QuestionEntity+CoreDataProperties.swift */; };
+		E49D42702851D0D000EC40DE /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = E49D426F2851D0D000EC40DE /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E49D42732851D0D000EC40DE /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49D426D2851D0D000EC40DE /* Common.framework */; };
+		E49D42742851D0D000EC40DE /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E49D426D2851D0D000EC40DE /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E49D427A2851D10C00EC40DE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D42792851D10C00EC40DE /* String+Extension.swift */; };
+		E49D427D2851DB1500EC40DE /* QuestionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D427C2851DB1500EC40DE /* QuestionDTO.swift */; };
+		E49D42812851E05E00EC40DE /* QuestionOptionsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D42802851E05E00EC40DE /* QuestionOptionsEnum.swift */; };
+		E49D4283285234D800EC40DE /* ExamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D4282285234D800EC40DE /* ExamView.swift */; };
+		E49D4285285235E000EC40DE /* ExamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D4284285235E000EC40DE /* ExamViewModel.swift */; };
 		E4A22112280FEFF4000C3510 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A22111280FEFF4000C3510 /* String+Extension.swift */; };
 		E4A2211428102AAA000C3510 /* GetUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A2211328102AAA000C3510 /* GetUserUseCase.swift */; };
 		E4A2211628102B4F000C3510 /* UserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A2211528102B4F000C3510 /* UserRepositoryProtocol.swift */; };
@@ -118,6 +132,13 @@
 			remoteGlobalIDString = E4080454280EFE7C004A2537;
 			remoteInfo = Infrastructure;
 		};
+		E49D42712851D0D000EC40DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E40803BD280EFA12004A2537 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E49D426C2851D0D000EC40DE;
+			remoteInfo = Common;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -127,6 +148,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E49D42742851D0D000EC40DE /* Common.framework in Embed Frameworks */,
 				E40803E2280EFA49004A2537 /* TTComponents.framework in Embed Frameworks */,
 				E408045C280EFE7C004A2537 /* Infrastructure.framework in Embed Frameworks */,
 			);
@@ -177,7 +199,7 @@
 		E4080444280EFE04004A2537 /* UserSignUpDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignUpDTO.swift; sourceTree = "<group>"; };
 		E4080445280EFE04004A2537 /* UserLoginRequestDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginRequestDTO.swift; sourceTree = "<group>"; };
 		E4080449280EFE0E004A2537 /* UserResponseDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserResponseDTO.swift; sourceTree = "<group>"; };
-		E408044A280EFE0E004A2537 /* ResponseMessageDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseMessageDTO.swift; sourceTree = "<group>"; };
+		E408044A280EFE0E004A2537 /* ResponseMessageDTO+Mapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ResponseMessageDTO+Mapping.swift"; sourceTree = "<group>"; };
 		E408044B280EFE0E004A2537 /* UserAccessResponseDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccessResponseDTO.swift; sourceTree = "<group>"; };
 		E4080455280EFE7C004A2537 /* Infrastructure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infrastructure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4080457280EFE7C004A2537 /* Infrastructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Infrastructure.h; sourceTree = "<group>"; };
@@ -194,13 +216,26 @@
 		E40DDD992837979000F94DA1 /* ExamDraftContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExamDraftContainer.xcdatamodel; sourceTree = "<group>"; };
 		E41E060F284F96C30079E0D4 /* BaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEntity.swift; sourceTree = "<group>"; };
 		E424004628187A90001FABAD /* ExamQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamQuestionView.swift; sourceTree = "<group>"; };
+		E44340482850D12C00E21CB9 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		E443404C2850E59400E21CB9 /* TakingTheExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakingTheExam.swift; sourceTree = "<group>"; };
+		E443404E28513D7F00E21CB9 /* TakingTheExamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakingTheExamViewModel.swift; sourceTree = "<group>"; };
+		E44340502851486C00E21CB9 /* GetExamByIdRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExamByIdRequestDTO.swift; sourceTree = "<group>"; };
+		E443405228514A5E00E21CB9 /* ExamResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExamResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		E48B987A2811785400392AA4 /* TTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTextField.swift; sourceTree = "<group>"; };
+		E48BF3BA2852807200DA8A7B /* ExamResultDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExamResultDTO+Mapping.swift"; sourceTree = "<group>"; };
 		E49B9708283E12FD00270470 /* ExamDraftRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDraftRepository.swift; sourceTree = "<group>"; };
 		E49BF0442837D387001A3D65 /* ExamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamModel.swift; sourceTree = "<group>"; };
 		E49BF0462837D6B0001A3D65 /* ExamEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExamEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E49BF0472837D6B0001A3D65 /* ExamEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExamEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E49BF0482837D6B0001A3D65 /* QuestionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E49BF0492837D6B0001A3D65 /* QuestionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E49D426D2851D0D000EC40DE /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E49D426F2851D0D000EC40DE /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		E49D42792851D10C00EC40DE /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		E49D427C2851DB1500EC40DE /* QuestionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDTO.swift; sourceTree = "<group>"; };
+		E49D42802851E05E00EC40DE /* QuestionOptionsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionOptionsEnum.swift; sourceTree = "<group>"; };
+		E49D4282285234D800EC40DE /* ExamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamView.swift; sourceTree = "<group>"; };
+		E49D4284285235E000EC40DE /* ExamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewModel.swift; sourceTree = "<group>"; };
 		E4A22111280FEFF4000C3510 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		E4A2211328102AAA000C3510 /* GetUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserUseCase.swift; sourceTree = "<group>"; };
 		E4A2211528102B4F000C3510 /* UserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryProtocol.swift; sourceTree = "<group>"; };
@@ -236,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E40803E1280EFA49004A2537 /* TTComponents.framework in Frameworks */,
+				E49D42732851D0D000EC40DE /* Common.framework in Frameworks */,
 				E408045B280EFE7C004A2537 /* Infrastructure.framework in Frameworks */,
 				E408046D280F0701004A2537 /* Swinject in Frameworks */,
 			);
@@ -255,6 +291,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E49D426A2851D0D000EC40DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -264,6 +307,7 @@
 				E40803C7280EFA12004A2537 /* InterViewProject */,
 				E40803DC280EFA49004A2537 /* TTComponents */,
 				E4080456280EFE7C004A2537 /* Infrastructure */,
+				E49D426E2851D0D000EC40DE /* Common */,
 				E40803C6280EFA12004A2537 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -274,6 +318,7 @@
 				E40803C5280EFA12004A2537 /* InterViewProject.app */,
 				E40803DB280EFA49004A2537 /* TTComponents.framework */,
 				E4080455280EFE7C004A2537 /* Infrastructure.framework */,
+				E49D426D2851D0D000EC40DE /* Common.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -372,12 +417,12 @@
 		E4080416280EFC64004A2537 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				E424004528187A43001FABAD /* CreateExamQuestion */,
+				E44340472850D0D600E21CB9 /* HomeScreen */,
+				E424004528187A43001FABAD /* ExamQuestionScreens */,
 				E4A2210F280FEFC5000C3510 /* Helper */,
 				E4080421280EFCCA004A2537 /* ProfilScene */,
 				E408041C280EFCA0004A2537 /* SignUp */,
 				E408041B280EFC99004A2537 /* Login */,
-				E4080417280EFC87004A2537 /* HomeView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -517,6 +562,7 @@
 		E4080440280EFDDF004A2537 /* DataMapping */ = {
 			isa = PBXGroup;
 			children = (
+				E49D427B2851DAEC00EC40DE /* QuestionDTO+Mapping */,
 				E41E060B284F8FE10079E0D4 /* ExamDTO+Mapping */,
 				E41E060A284F8F2B0079E0D4 /* Kontrol_et_sil */,
 				E41E0607284F8ECE0079E0D4 /* UserDTO+Mapping */,
@@ -649,6 +695,8 @@
 			isa = PBXGroup;
 			children = (
 				E4FCD99D284DEB1E00CCDC5D /* ExamQuestionRequestDTO.swift */,
+				E44340502851486C00E21CB9 /* GetExamByIdRequestDTO.swift */,
+				E48BF3BA2852807200DA8A7B /* ExamResultDTO+Mapping.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -656,7 +704,8 @@
 		E41E060D284F8FF40079E0D4 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				E408044A280EFE0E004A2537 /* ResponseMessageDTO.swift */,
+				E408044A280EFE0E004A2537 /* ResponseMessageDTO+Mapping.swift */,
+				E443405228514A5E00E21CB9 /* ExamResponseDTO+Mapping.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -669,14 +718,77 @@
 			path = BaseEntity;
 			sourceTree = "<group>";
 		};
-		E424004528187A43001FABAD /* CreateExamQuestion */ = {
+		E424004528187A43001FABAD /* ExamQuestionScreens */ = {
 			isa = PBXGroup;
 			children = (
+				E443404B2850E54400E21CB9 /* TakingTheExam */,
 				E4B00217282E71A1001E8537 /* ExamAddDetail */,
 				E4C20A03281AF0BD0036F91E /* QuestionAddDetail */,
 				E424004628187A90001FABAD /* ExamQuestionView.swift */,
 			);
-			path = CreateExamQuestion;
+			path = ExamQuestionScreens;
+			sourceTree = "<group>";
+		};
+		E44340472850D0D600E21CB9 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E4080417280EFC87004A2537 /* HomeView.swift */,
+				E44340482850D12C00E21CB9 /* HomeScreen.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		E443404B2850E54400E21CB9 /* TakingTheExam */ = {
+			isa = PBXGroup;
+			children = (
+				E443404C2850E59400E21CB9 /* TakingTheExam.swift */,
+				E443404E28513D7F00E21CB9 /* TakingTheExamViewModel.swift */,
+				E49D4282285234D800EC40DE /* ExamView.swift */,
+				E49D4284285235E000EC40DE /* ExamViewModel.swift */,
+			);
+			path = TakingTheExam;
+			sourceTree = "<group>";
+		};
+		E49D426E2851D0D000EC40DE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E49D427E2851E03100EC40DE /* Helper */,
+				E49D42782851D0DD00EC40DE /* DataExtension */,
+				E49D426F2851D0D000EC40DE /* Common.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E49D42782851D0DD00EC40DE /* DataExtension */ = {
+			isa = PBXGroup;
+			children = (
+				E49D42792851D10C00EC40DE /* String+Extension.swift */,
+			);
+			path = DataExtension;
+			sourceTree = "<group>";
+		};
+		E49D427B2851DAEC00EC40DE /* QuestionDTO+Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				E49D427C2851DB1500EC40DE /* QuestionDTO.swift */,
+			);
+			path = "QuestionDTO+Mapping";
+			sourceTree = "<group>";
+		};
+		E49D427E2851E03100EC40DE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E49D427F2851E03800EC40DE /* QuestionOptionsEnum */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		E49D427F2851E03800EC40DE /* QuestionOptionsEnum */ = {
+			isa = PBXGroup;
+			children = (
+				E49D42802851E05E00EC40DE /* QuestionOptionsEnum.swift */,
+			);
+			path = QuestionOptionsEnum;
 			sourceTree = "<group>";
 		};
 		E4A2210F280FEFC5000C3510 /* Helper */ = {
@@ -791,6 +903,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E49D42682851D0D000EC40DE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E49D42702851D0D000EC40DE /* Common.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -808,6 +928,7 @@
 			dependencies = (
 				E40803E0280EFA49004A2537 /* PBXTargetDependency */,
 				E408045A280EFE7C004A2537 /* PBXTargetDependency */,
+				E49D42722851D0D000EC40DE /* PBXTargetDependency */,
 			);
 			name = InterViewProject;
 			packageProductDependencies = (
@@ -853,6 +974,24 @@
 			productReference = E4080455280EFE7C004A2537 /* Infrastructure.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		E49D426C2851D0D000EC40DE /* Common */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E49D42772851D0D000EC40DE /* Build configuration list for PBXNativeTarget "Common" */;
+			buildPhases = (
+				E49D42682851D0D000EC40DE /* Headers */,
+				E49D42692851D0D000EC40DE /* Sources */,
+				E49D426A2851D0D000EC40DE /* Frameworks */,
+				E49D426B2851D0D000EC40DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Common;
+			productName = Common;
+			productReference = E49D426D2851D0D000EC40DE /* Common.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -873,6 +1012,10 @@
 					E4080454280EFE7C004A2537 = {
 						CreatedOnToolsVersion = 13.2.1;
 						LastSwiftMigration = 1320;
+					};
+					E49D426C2851D0D000EC40DE = {
+						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -895,6 +1038,7 @@
 				E40803C4280EFA12004A2537 /* InterViewProject */,
 				E40803DA280EFA49004A2537 /* TTComponents */,
 				E4080454280EFE7C004A2537 /* Infrastructure */,
+				E49D426C2851D0D000EC40DE /* Common */,
 			);
 		};
 /* End PBXProject section */
@@ -923,6 +1067,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E49D426B2851D0D000EC40DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -942,6 +1093,7 @@
 				E4FCD99E284DEB1E00CCDC5D /* ExamQuestionRequestDTO.swift in Sources */,
 				E4080472280F18B2004A2537 /* ErrorObject.swift in Sources */,
 				E4080447280EFE04004A2537 /* UserSignUpDTO.swift in Sources */,
+				E48BF3BB2852807200DA8A7B /* ExamResultDTO+Mapping.swift in Sources */,
 				E424004728187A90001FABAD /* ExamQuestionView.swift in Sources */,
 				E408044C280EFE0E004A2537 /* UserResponseDTO.swift in Sources */,
 				E4A22112280FEFF4000C3510 /* String+Extension.swift in Sources */,
@@ -953,8 +1105,9 @@
 				E4A2211828102BC1000C3510 /* UserRepository.swift in Sources */,
 				E4A2211E28104953000C3510 /* ProfileViewModel.swift in Sources */,
 				E4C20A0D281B5DDE0036F91E /* QuestionExamRepository.swift in Sources */,
+				E49D4283285234D800EC40DE /* ExamView.swift in Sources */,
 				E49BF04A2837D6B0001A3D65 /* ExamEntity+CoreDataClass.swift in Sources */,
-				E408044D280EFE0E004A2537 /* ResponseMessageDTO.swift in Sources */,
+				E408044D280EFE0E004A2537 /* ResponseMessageDTO+Mapping.swift in Sources */,
 				E49BF04B2837D6B0001A3D65 /* ExamEntity+CoreDataProperties.swift in Sources */,
 				E40803CB280EFA12004A2537 /* ContentView.swift in Sources */,
 				E408044E280EFE0E004A2537 /* UserAccessResponseDTO.swift in Sources */,
@@ -963,6 +1116,8 @@
 				E4080446280EFE04004A2537 /* UUIDRequestDTO.swift in Sources */,
 				E4A2211628102B4F000C3510 /* UserRepositoryProtocol.swift in Sources */,
 				E40DDD932837892900F94DA1 /* ExamSaveView.swift in Sources */,
+				E44340492850D12C00E21CB9 /* HomeScreen.swift in Sources */,
+				E443404F28513D7F00E21CB9 /* TakingTheExamViewModel.swift in Sources */,
 				E4B00219282E71C6001E8537 /* ExamAddDetail.swift in Sources */,
 				E4A22120281055F7000C3510 /* SignUpViewModel.swift in Sources */,
 				E49BF04C2837D6B0001A3D65 /* QuestionEntity+CoreDataClass.swift in Sources */,
@@ -970,13 +1125,18 @@
 				E4080428280EFD01004A2537 /* PromotionSectionView.swift in Sources */,
 				E4B4C3252844FB4B0001CD79 /* CDExamRepositoryProtocol.swift in Sources */,
 				E4080437280EFD7B004A2537 /* UserSignUpEntity.swift in Sources */,
+				E443405328514A5E00E21CB9 /* ExamResponseDTO+Mapping.swift in Sources */,
+				E49D427D2851DB1500EC40DE /* QuestionDTO.swift in Sources */,
 				E4A2211428102AAA000C3510 /* GetUserUseCase.swift in Sources */,
 				E4A3962F283D07ED00D216A2 /* ExamRepository.swift in Sources */,
+				E49D4285285235E000EC40DE /* ExamViewModel.swift in Sources */,
 				E49B9709283E12FD00270470 /* ExamDraftRepository.swift in Sources */,
 				E408041E280EFCAD004A2537 /* LoginVİew.swift in Sources */,
 				E4080424280EFCE8004A2537 /* ProfileView.swift in Sources */,
+				E44340512851486C00E21CB9 /* GetExamByIdRequestDTO.swift in Sources */,
 				E41E0610284F96C30079E0D4 /* BaseEntity.swift in Sources */,
 				E408043F280EFDD9004A2537 /* APIEndpoints+Factory.swift in Sources */,
+				E443404D2850E59400E21CB9 /* TakingTheExam.swift in Sources */,
 				E4080448280EFE04004A2537 /* UserLoginRequestDTO.swift in Sources */,
 				E40803C9280EFA12004A2537 /* InterViewProjectApp.swift in Sources */,
 				E4B4C3232844F8310001CD79 /* CDExamManageUseCase.swift in Sources */,
@@ -1032,6 +1192,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E49D42692851D0D000EC40DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E49D427A2851D10C00EC40DE /* String+Extension.swift in Sources */,
+				E49D42812851E05E00EC40DE /* QuestionOptionsEnum.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1044,6 +1213,11 @@
 			isa = PBXTargetDependency;
 			target = E4080454280EFE7C004A2537 /* Infrastructure */;
 			targetProxy = E4080459280EFE7C004A2537 /* PBXContainerItemProxy */;
+		};
+		E49D42722851D0D000EC40DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E49D426C2851D0D000EC40DE /* Common */;
+			targetProxy = E49D42712851D0D000EC40DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1346,6 +1520,69 @@
 			};
 			name = Release;
 		};
+		E49D42752851D0D000EC40DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TugrulCanMercan.Common;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E49D42762851D0D000EC40DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TugrulCanMercan.Common;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1381,6 +1618,15 @@
 			buildConfigurations = (
 				E408045E280EFE7C004A2537 /* Debug */,
 				E408045F280EFE7C004A2537 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E49D42772851D0D000EC40DE /* Build configuration list for PBXNativeTarget "Common" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E49D42752851D0D000EC40DE /* Debug */,
+				E49D42762851D0D000EC40DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

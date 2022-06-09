@@ -7,10 +7,10 @@
     </entity>
     <entity name="QuestionEntity" representedClassName=".QuestionEntity" parentEntity="ExamEntity" syncable="YES">
         <attribute name="category" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="quesitons" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String:String]"/>
         <attribute name="questionAnswer" optional="YES" attributeType="String"/>
         <attribute name="questionContent" optional="YES" attributeType="String"/>
+        <attribute name="questionId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="selectedPicker" optional="YES" attributeType="String"/>
         <relationship name="exam" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExamEntity" inverseName="questions" inverseEntity="ExamEntity"/>
     </entity>

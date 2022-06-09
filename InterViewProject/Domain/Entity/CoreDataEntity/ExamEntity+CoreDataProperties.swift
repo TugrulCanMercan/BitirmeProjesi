@@ -46,7 +46,7 @@ extension ExamEntity : Identifiable {
         
         let questionList = questions?.compactMap({ item -> TTQuestion in
             
-            let ttQuestionModel = TTQuestion(UUID: ,
+            let ttQuestionModel = TTQuestion(UUID: item.questionId,
                                              category: item.category ?? [],
                                              selectedPicker: item.selectedPicker ?? "",
                                              questionContent: item.questionContent ?? "",

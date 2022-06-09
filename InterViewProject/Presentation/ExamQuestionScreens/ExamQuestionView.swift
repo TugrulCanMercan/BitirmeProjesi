@@ -48,7 +48,7 @@ struct ExamQuestionView: View {
     @State var showAddQuestionDetail = false
     @State var selection:Selection = .showExamQuestion
     @StateObject var vm = AddQuestionViewModel()
-    @ObservedObject var exmVm = ExamQuestionViewModel()
+    @StateObject var exmVm = ExamQuestionViewModel()
     @Namespace var animation
     
     var body: some View {

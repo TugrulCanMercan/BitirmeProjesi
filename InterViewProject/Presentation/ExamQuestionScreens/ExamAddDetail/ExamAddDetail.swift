@@ -20,7 +20,7 @@ struct ExamAddDetail: View {
     
     @Binding var currentShowedView:Selection
     
-    @ObservedObject var VM : ExamQuestionViewModel
+    @StateObject var VM : ExamQuestionViewModel
     @State var show = true
     @State var index:Int = 0
     
@@ -98,7 +98,7 @@ struct ExamAddDetail: View {
                                     Button {
                                         VM.saveExam()   
                                     } label: {
-                                        Text("Soru Eklemeye Devam Et")
+                                        Text("Kaydet")
                                     }
                                     .padding()
                                 }

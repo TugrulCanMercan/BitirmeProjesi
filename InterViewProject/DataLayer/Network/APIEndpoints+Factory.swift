@@ -48,8 +48,22 @@ struct APIEndpoints {
         static func addExam(exam:ExamRequestDTO) -> Endpoint<ResponseMessageDTO> {
 //            Gatewayle değişecek değişecek ilerde
             let token = UserDefaults.standard.string(forKey: "token")
-            return Endpoint(path: "gateway/userService/getUser", method: .get ,headerParamaters: ["Authorization" : "Bearer \(token ?? "")"])
+            return Endpoint(path: "createExam", method: .post, headerParamaters: ["Content-Type":"application/json"],bodyParamatersEncodable: exam)
+        }
+        static func getExamId(examId:GetExamByIdRequestDTO) -> Endpoint<[ExamResponseDto]> {
+            return Endpoint(path: "getExamId", method: .post, headerParamaters: ["Content-Type":"application/json"],bodyParamatersEncodable: examId)
+        }
+        static func postResultExamTurnIn(exam:GetExamByIdRequestDTO) -> Endpoint<[ExamResponseDto]> {
+            return Endpoint(path: "getExamId", method: .post, headerParamaters: ["Content-Type":"application/json"],bodyParamatersEncodable: examId)
+        }
+        
+    }
+    enum Question {
+        static func getAllQuestionId(questionsId:[String]) -> Endpoint<QuestionDTO> {
+            return Endpoint(path: "getAllQuestionsExam", method: .post,headerParamaters: ["Content-Type":"application/json"], bodyParamaters: ["userQuestionLibrary" : questionsId])
         }
     }
 
 }
+
+

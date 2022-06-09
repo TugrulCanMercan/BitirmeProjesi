@@ -18,6 +18,38 @@ final class QuestionExamRepository{
 
 
 extension QuestionExamRepository:QuestionExamRepositoryProtocol{
+    func postResultExamTurnIn(exam: ExamModel, completionHandler: @escaping (Result<BaseEntity<ResponseMessage>, Error>) -> Void) {
+        let exnpoint = APIEndpoints.Exam
+    }
+    
+    func getAllQuestionList(questionId: [String], completionHandler: @escaping (Result<BaseEntity<[TTQuestion]>, Error>) -> Void) {
+        let endpoint = APIEndpoints.Question.getAllQuestionId(questionsId: questionId)
+        networkService.request(with: endpoint) { result in
+            switch result {
+            case .success(let question):
+                
+                completionHandler(.success(BaseEntity<[TTQuestion]>(responseMessage: "başarılı", data: question.toDomain(), responseStatus: "200")))
+            case .failure(let err):
+                completionHandler(.failure(err))
+            }
+        }
+    }
+    
+ 
+    
+    func getExamId(examId: String, completionHandler: @escaping (Result<BaseEntity<ExamModel>,Error>) -> Void) {
+        let endpoint = APIEndpoints.Exam.getExamId(examId: GetExamByIdRequestDTO(examId: examId))
+        networkService.request(with: endpoint) { result in
+            switch result {
+            case .success(let data):
+                guard let exam = data.first else { return }
+                completionHandler(.success(BaseEntity<ExamModel>(responseMessage: "başarılı", data: exam.toDomain() , responseStatus: "")))
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+        }
+    }
+    
     func addQuestion(question: TTQuestion, completionHandler: @escaping (Result<TTQuestion, Error>) -> Void) {
         print("boş")
     }
@@ -45,6 +77,8 @@ extension QuestionExamRepository:QuestionExamRepositoryProtocol{
     func getCategoryList(categoryList: [String], completionHandler: @escaping (Result<TTQuestion, Error>) -> Void) {
         
     }
+    
+    
     
     
 }
