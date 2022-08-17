@@ -37,27 +37,31 @@ struct ExamAddDetail: View {
                         .padding(.vertical)
                     Spacer()
                     GeometryReader { proxy in
-                        VStack{
+                        VStack(spacing:50){
                             TextField("Sınav Adı Giriniz", text: $VM.examName)
                                 .background(
                                     Divider()
                                         .offset( y: 20)
                                 )
                                 .padding(.bottom)
+                            Button {
+                                VM.examAddQuestion()
+                            } label: {
+                                Text("Soru Eklemeye Başla")
+                                    .font(.title2)
+                                    .foregroundColor(.black)
+                            }
+                            .padding(.vertical)
                         }
                         .frame(height: proxy.size.height / 3)
+                        
                     }
                     
                     
-                    Spacer()
-                    Button {
-                        VM.examAddQuestion()
-                    } label: {
-                        Text("Soru Eklemeye Başla")
-                            .font(.title2)
-                            .foregroundColor(.black)
-                    }
-                    .padding(.vertical)
+        
+                    
+   
+                    
                 }
                 .padding()
                 
@@ -95,12 +99,14 @@ struct ExamAddDetail: View {
                                         Text("Soru Eklemeye Devam Et")
                                     }
                                     .padding()
+                                    .offset(y: -50)
                                     Button {
                                         VM.saveExam()   
                                     } label: {
                                         Text("Kaydet")
                                     }
                                     .padding()
+                                    .offset(y: -50)
                                 }
                             } else {
                                 Button {
@@ -110,6 +116,7 @@ struct ExamAddDetail: View {
                                     Text("Soru Eklemeye Devam Et")
                                 }
                                 .padding()
+                                .offset(y: -50)
                             }
                            
                         }

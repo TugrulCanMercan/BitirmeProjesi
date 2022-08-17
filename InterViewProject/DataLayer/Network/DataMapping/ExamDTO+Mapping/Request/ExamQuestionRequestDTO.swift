@@ -9,7 +9,7 @@ import Foundation
 
 
 struct ExamRequestDTO: Codable {
-    let UUID:UUID?
+    let UUID:String
     let examTitle:String?
     let examCategory:String?
     let examStartTime:Date?

@@ -84,13 +84,11 @@ struct ExamQuestionView: View {
 
                         VStack(spacing:20){
 
-                            addButtonView(title: "SORU OLUŞTUR")
-                                .onTapGesture {
-                                    withAnimation {
-                                        selection = .showAddQuestionDetail
-                                    }
-                                    
-                                }
+                            CustomNavLink(destination:   TakingTheExam()) {
+                                addButtonView(title: "SINAVA GİT")
+                            }
+
+
 
                             addButtonView(title: "SINAV OLUŞTUR")
                                 .onTapGesture {

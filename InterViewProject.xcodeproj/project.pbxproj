@@ -74,6 +74,7 @@
 		E443405328514A5E00E21CB9 /* ExamResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E443405228514A5E00E21CB9 /* ExamResponseDTO+Mapping.swift */; };
 		E48B987B2811785400392AA4 /* TTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48B987A2811785400392AA4 /* TTTextField.swift */; };
 		E48BF3BB2852807200DA8A7B /* ExamResultDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BF3BA2852807200DA8A7B /* ExamResultDTO+Mapping.swift */; };
+		E48BF3BD2852BAB800DA8A7B /* UserInformtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BF3BC2852BAB800DA8A7B /* UserInformtion.swift */; };
 		E49B9709283E12FD00270470 /* ExamDraftRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B9708283E12FD00270470 /* ExamDraftRepository.swift */; };
 		E49BF0452837D387001A3D65 /* ExamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49BF0442837D387001A3D65 /* ExamModel.swift */; };
 		E49BF04A2837D6B0001A3D65 /* ExamEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49BF0462837D6B0001A3D65 /* ExamEntity+CoreDataClass.swift */; };
@@ -223,6 +224,7 @@
 		E443405228514A5E00E21CB9 /* ExamResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExamResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		E48B987A2811785400392AA4 /* TTTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTextField.swift; sourceTree = "<group>"; };
 		E48BF3BA2852807200DA8A7B /* ExamResultDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExamResultDTO+Mapping.swift"; sourceTree = "<group>"; };
+		E48BF3BC2852BAB800DA8A7B /* UserInformtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformtion.swift; sourceTree = "<group>"; };
 		E49B9708283E12FD00270470 /* ExamDraftRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDraftRepository.swift; sourceTree = "<group>"; };
 		E49BF0442837D387001A3D65 /* ExamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamModel.swift; sourceTree = "<group>"; };
 		E49BF0462837D6B0001A3D65 /* ExamEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExamEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -755,6 +757,7 @@
 				E49D427E2851E03100EC40DE /* Helper */,
 				E49D42782851D0DD00EC40DE /* DataExtension */,
 				E49D426F2851D0D000EC40DE /* Common.h */,
+				E48BF3BC2852BAB800DA8A7B /* UserInformtion.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1198,6 +1201,7 @@
 			files = (
 				E49D427A2851D10C00EC40DE /* String+Extension.swift in Sources */,
 				E49D42812851E05E00EC40DE /* QuestionOptionsEnum.swift in Sources */,
+				E48BF3BD2852BAB800DA8A7B /* UserInformtion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

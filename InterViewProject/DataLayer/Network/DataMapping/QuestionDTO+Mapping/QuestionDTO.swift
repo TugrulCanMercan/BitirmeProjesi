@@ -13,7 +13,7 @@ struct QuestionDTO:Codable{
         let questionContent:String
         let questionsList:QuestionOption
         let questionsId:String
-        
+        let questionAnswer:String?
     }
     struct QuestionOption:Codable{
         let A:String

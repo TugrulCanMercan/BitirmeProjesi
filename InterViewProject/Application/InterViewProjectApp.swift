@@ -15,9 +15,9 @@ struct InterViewProjectApp: App {
         WindowGroup {
             
           
-//            LoginView()
+            LoginView()
 //            ExamQuestionView()
-            TakingTheExam()
+//            TakingTheExam()
 //            QuestionAddScene(viewModel: QuestionViewModel(), showActivate: .constant(false), questionContent: [], questionOptions: [:])
 //            Test2View()
         }

@@ -17,7 +17,7 @@ struct TTQuestion:Hashable {
 }
 
 extension TTQuestion{
-    func options(){
+    func toDomain(){
         
     }
 }

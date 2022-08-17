@@ -10,8 +10,19 @@ import Foundation
 
 struct ExamResultDTO:Codable{
     let examId:UUID?
-    let examName:String?
-    var questions:[TTQuestion]?
+    let examTitle:String?
+    var examQuestions:[ExamQuestionResultDTO]?
     let examStartDate:Date?
     let examEndDate:Date?
 }
+
+
+struct ExamQuestionResultDTO:Codable{
+    let question:QuestionResultDTO
+}
+struct QuestionResultDTO:Codable{
+    let questionContent:String
+    let questionOptions:[String:String]
+    let questionAnswer:String
+}
+

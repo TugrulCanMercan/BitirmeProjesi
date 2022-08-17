@@ -16,11 +16,12 @@ struct HomeView: View {
         
         
         CustomTabBarContainerView(selection: $tabSelection) {
-            Profile()
+            ExamQuestionView()
                 .tabBarItem(tab: .home, selection: $tabSelection)
             ProfileView()
                 .tabBarItem(tab: .profile, selection: $tabSelection)
         }
+        
         .ignoresSafeArea(.keyboard, edges: .bottom)
     }
 }

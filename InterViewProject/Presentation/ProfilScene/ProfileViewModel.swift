@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Common
 
 
 final class ProfileViewModel:ObservableObject{
@@ -18,7 +19,7 @@ final class ProfileViewModel:ObservableObject{
     init(){
         
         getUser()
-      
+        
     }
     
     func getUser(){
@@ -27,6 +28,8 @@ final class ProfileViewModel:ObservableObject{
                 
             case .success(let data):
                 self.userInfo = data
+                UserDefaults.standard.set(data._id, forKey: "UserId")
+                
             case .failure(let error):
                 print(error)
             }

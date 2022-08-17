@@ -12,6 +12,7 @@ protocol IQuestionAndExamUseCase {
     func addExam(exam:ExamModel, completionHandler: @escaping (Result<BaseEntity<ResponseMessage>,Error>) -> Void)
     func getAllExam(examId:String,completionHandler: @escaping (Result<BaseEntity<ExamModel>,Error>) -> Void) // isminde hata var
     func getAllQuestionList(questionId:[String],completionHandler: @escaping (Result<BaseEntity<[TTQuestion]>,Error>) -> Void)
+    func postResultExamTurnIn(exam: ExamModel , completionHandler: @escaping (Result<BaseEntity<ResponseMessage>, Error>) -> Void)
 }
 
 final class QuestionAndExamUseCase{
@@ -59,7 +60,7 @@ extension QuestionAndExamUseCase: IQuestionAndExamUseCase {
     
     
     func postResultExamTurnIn(exam: ExamModel , completionHandler: @escaping (Result<BaseEntity<ResponseMessage>, Error>) -> Void){
-        
+        questionExamRepository.postResultExamTurnIn(exam: exam, completionHandler: completionHandler)
     }
     
 }
